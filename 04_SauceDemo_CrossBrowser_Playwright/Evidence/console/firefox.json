@@ -1,0 +1,37 @@
+[
+  {
+    "type": "requestfailed",
+    "url": "https://submit.backtrace.io/UNIVERSE/TOKEN/json",
+    "error": "NS_BINDING_ABORTED"
+  },
+  {
+    "type": "requestfailed",
+    "url": "https://www.saucedemo.com/assets/sauce-backpack-1200x1500-CjRW-Djj.jpg",
+    "error": "NS_BINDING_ABORTED"
+  },
+  {
+    "type": "requestfailed",
+    "url": "https://www.saucedemo.com/assets/bike-light-1200x1500-DxcZRFOA.jpg",
+    "error": "NS_BINDING_ABORTED"
+  },
+  {
+    "type": "requestfailed",
+    "url": "https://www.saucedemo.com/assets/bolt-shirt-1200x1500-mR0ldpVS.jpg",
+    "error": "NS_BINDING_ABORTED"
+  },
+  {
+    "type": "requestfailed",
+    "url": "https://www.saucedemo.com/assets/sauce-pullover-1200x1500-BfbI-PSd.jpg",
+    "error": "NS_BINDING_ABORTED"
+  },
+  {
+    "type": "requestfailed",
+    "url": "https://www.saucedemo.com/assets/red-onesie-1200x1500-BrSuq0ic.jpg",
+    "error": "NS_BINDING_ABORTED"
+  },
+  {
+    "type": "requestfailed",
+    "url": "https://www.saucedemo.com/assets/red-tatt-1200x1500-E-qp6aYf.jpg",
+    "error": "NS_BINDING_ABORTED"
+  }
+]

@@ -1,0 +1,61 @@
+[
+  {
+    "type": "console.error",
+    "text": "Permissions policy violation: unload is not allowed in this document.",
+    "location": {
+      "url": "https://www.saucedemo.com/assets/index-DnLqFcJI.js",
+      "line": 3,
+      "column": 0,
+      "lineNumber": 3,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "requestfailed",
+    "url": "https://events.backtrace.io/api/unique-events/submit?universe=UNIVERSE&token=TOKEN",
+    "error": "net::ERR_ABORTED"
+  },
+  {
+    "type": "requestfailed",
+    "url": "https://events.backtrace.io/api/summed-events/submit?universe=UNIVERSE&token=TOKEN",
+    "error": "net::ERR_ABORTED"
+  },
+  {
+    "type": "requestfailed",
+    "url": "https://submit.backtrace.io/UNIVERSE/TOKEN/json",
+    "error": "net::ERR_ABORTED"
+  },
+  {
+    "type": "console.error",
+    "text": "Permissions policy violation: unload is not allowed in this document.",
+    "location": {
+      "url": "https://www.saucedemo.com/assets/index-DnLqFcJI.js",
+      "line": 3,
+      "column": 0,
+      "lineNumber": 3,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "console.error",
+    "text": "Failed to load resource: the server responded with a status of 404 ()",
+    "location": {
+      "url": "https://www.saucedemo.com/inventory.html",
+      "line": 0,
+      "column": 0,
+      "lineNumber": 0,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "console.error",
+    "text": "Permissions policy violation: unload is not allowed in this document.",
+    "location": {
+      "url": "https://www.saucedemo.com/assets/index-DnLqFcJI.js",
+      "line": 3,
+      "column": 0,
+      "lineNumber": 3,
+      "columnNumber": 0
+    }
+  }
+]

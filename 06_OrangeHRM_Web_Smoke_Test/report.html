@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smoke Test Report — OrangeHRM Demo</title>
+<style>
+  :root { --pass:#1a7f37; --border:#d8dee4; --muted:#57606a; --bg:#f6f8fa; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: "Segoe UI", Arial, sans-serif; color:#1f2328; line-height:1.5; }
+  header { background:#0b3d91; color:#fff; padding:28px 32px; }
+  header h1 { margin:0 0 6px; font-size:24px; }
+  header p { margin:2px 0; opacity:.9; font-size:14px; }
+  main { padding:28px 32px 60px; max-width:1100px; }
+  h2 { font-size:18px; margin:32px 0 12px; border-bottom:2px solid var(--border); padding-bottom:6px; }
+  table { border-collapse:collapse; width:100%; font-size:14px; }
+  th, td { border:1px solid var(--border); padding:8px 10px; text-align:left; vertical-align:top; }
+  th { background:var(--bg); }
+  .cards { display:flex; gap:12px; flex-wrap:wrap; }
+  .card { border:1px solid var(--border); border-radius:8px; padding:14px 18px; min-width:150px; }
+  .card b { display:block; font-size:24px; }
+  .card span { color:var(--muted); font-size:13px; }
+  .pass { color:var(--pass); font-weight:600; }
+  .shots { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:16px; }
+  figure { margin:0; border:1px solid var(--border); border-radius:8px; overflow:hidden; }
+  figure img { width:100%; display:block; border-bottom:1px solid var(--border); }
+  figcaption { padding:8px 10px; font-size:13px; color:var(--muted); }
+  ul { padding-left:20px; }
+  code { background:var(--bg); padding:1px 5px; border-radius:4px; font-size:13px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Smoke Test Report — OrangeHRM Demo</h1>
+  <p>OrangeHRM OS 5.9 · https://opensource-demo.orangehrmlive.com</p>
+  <p>Run date: 2026-11-02 · QA Engineer: Benedict Timothy · Mode: AI-Assisted Manual Smoke Testing (Human-in-the-Loop via Playwright CLI)</p>
+  <p>Test Plan: <code>Test_Plan.md (TP-OHRM-SMOKE-V1.0)</code> · Traceability Matrix: <code>RTM.md</code> &amp; <code>OrangeHRM_Smoke_RTM_TestCases.xlsx</code></p>
+</header>
+<main>
+
+<h2>Result</h2>
+<div class="cards">
+  <div class="card"><b>20</b><span>Checks</span></div>
+  <div class="card"><b class="pass">20</b><span>Passed</span></div>
+  <div class="card"><b>0</b><span>Failed</span></div>
+  <div class="card"><b>0</b><span>Blockers</span></div>
+  <div class="card"><b>0</b><span>Console errors</span></div>
+</div>
+
+<h2>Test Cases</h2>
+<table>
+  <thead><tr><th>ID</th><th>Check</th><th>Expected</th><th>Actual</th><th>Status</th></tr></thead>
+  <tbody>
+    <tr><td>SMK-01</td><td>Login page loads</td><td>Username, Password, Login button, logo, version note</td><td>All present; title <code>OrangeHRM</code>; demo credentials shown</td><td class="pass">PASS</td></tr>
+    <tr><td>SMK-02</td><td>Login with empty fields</td><td>Validation, no navigation</td><td>Two <code>Required</code> messages; URL unchanged</td><td class="pass">PASS</td></tr>
+    <tr><td>SMK-03</td><td>Login with wrong password</td><td>Error, no session</td><td>Alert <code>Invalid credentials</code>; URL unchanged</td><td class="pass">PASS</td></tr>
+    <tr><td>SMK-04</td><td>Login with valid credentials</td><td>Redirect to dashboard</td><td><code>/dashboard/index</code>, breadcrumb Dashboard</td><td class="pass">PASS</td></tr>
+    <tr><td>SMK-05</td><td>Admin module</td><td>System Users list</td><td><code>/admin/viewSystemUsers</code></td><td class="pass">PASS</td></tr>
+    <tr><td>SMK-06</td><td>PIM module</td><td>Employee list</td><td><code>/pim/viewEmployeeList</code></td><td class="pass">PASS</td></tr>
+    <tr><td>SMK-07</td><td>Leave module</td><td>Leave list</td><td><code>/leave/viewLeaveList</code></td><td class="pass">PASS</td></tr>
+    <tr><td>SMK-08</td><td>Time module</td><td>Timesheet view</td><td><code>/time/viewEmployeeTimesheet</code></td><td class="pass">PASS</td></tr>
+    <tr><td>SMK-09</td><td>Recruitment module</td><td>Candidate list</td><td><code>/recruitment/viewCandidates</code></td><td class="pass">PASS</td></tr>
+    <tr><td>SMK-10</td><td>My Info module</td><td>Personal details</td><td><code>/pim/viewPersonalDetails/empNumber/7</code></td><td class="pass">PASS</td></tr>
+    <tr><td>SMK-11</td><td>Performance module</td><td>Review search</td><td><code>/performance/searchEvaluatePerformanceReview</code></td><td class="pass">PASS</td></tr>
+    <tr><td>SMK-12</td><td>Dashboard module</td><td>Widgets render</td><td><code>/dashboard/index</code></td><td class="pass">PASS</td></tr>
+    <tr><td>SMK-13</td><td>Directory module</td><td>Employee directory</td><td><code>/directory/viewDirectory</code></td><td class="pass">PASS</td></tr>
+    <tr><td>SMK-14</td><td>Maintenance module</td><td>Password re-confirmation gate</td><td>Heading <code>Administrator Access</code>, password field present</td><td class="pass">PASS</td></tr>
+    <tr><td>SMK-15</td><td>Claim module</td><td>Assign claim page</td><td><code>/claim/viewAssignClaim</code></td><td class="pass">PASS</td></tr>
+    <tr><td>SMK-16</td><td>Buzz module</td><td>Social feed</td><td><code>/buzz/viewBuzz</code></td><td class="pass">PASS</td></tr>
+    <tr><td>SMK-17</td><td>User dropdown</td><td>About / Support / Change Password / Logout</td><td>Menu rendered</td><td class="pass">PASS</td></tr>
+    <tr><td>SMK-18</td><td>Logout</td><td>Session cleared, login page</td><td>Redirect to <code>/auth/login</code></td><td class="pass">PASS</td></tr>
+    <tr><td>SMK-19</td><td>Protected route after logout</td><td>Deep link blocked</td><td><code>/admin/viewSystemUsers</code> redirected to login</td><td class="pass">PASS</td></tr>
+    <tr><td>SMK-20</td><td>Forgot password</td><td>Reset request form</td><td><code>/auth/requestPasswordResetCode</code></td><td class="pass">PASS</td></tr>
+  </tbody>
+</table>
+
+<h2>Observations (non-blocking)</h2>
+<ul>
+  <li><b>Autocomplete attributes missing</b> — verbose DOM warning on login and Maintenance password inputs: <code>Input elements should have autocomplete attributes (suggested: "current-password")</code>.</li>
+  <li><b>Maintenance collapses main navigation</b> — left menu disappears until the admin password is re-entered. Expected OrangeHRM behavior; navigation must return to the dashboard first.</li>
+  <li><b>My Info breadcrumb shows <code>PIM</code></b> — cosmetic inconsistency.</li>
+  <li><b>No JavaScript errors</b> logged during the run.</li>
+</ul>
+
+<h2>Screenshots</h2>
+<div class="shots">
+  <figure><img src="screenshots/01-login-page.png" alt="Login page"><figcaption>01 · Login page</figcaption></figure>
+  <figure><img src="screenshots/02-empty-validation.png" alt="Empty field validation"><figcaption>02 · Empty-field validation</figcaption></figure>
+  <figure><img src="screenshots/03-invalid-credentials.png" alt="Invalid credentials"><figcaption>03 · Invalid credentials</figcaption></figure>
+  <figure><img src="screenshots/04-dashboard.png" alt="Dashboard"><figcaption>04 · Dashboard after login</figcaption></figure>
+  <figure><img src="screenshots/05-admin.png" alt="Admin module"><figcaption>05 · Admin — System Users</figcaption></figure>
+  <figure><img src="screenshots/06-pim.png" alt="PIM module"><figcaption>06 · PIM — Employee List</figcaption></figure>
+  <figure><img src="screenshots/07-leave.png" alt="Leave module"><figcaption>07 · Leave — Leave List</figcaption></figure>
+  <figure><img src="screenshots/08-time.png" alt="Time module"><figcaption>08 · Time — Timesheet</figcaption></figure>
+  <figure><img src="screenshots/09-recruitment.png" alt="Recruitment module"><figcaption>09 · Recruitment — Candidates</figcaption></figure>
+  <figure><img src="screenshots/10-my-info.png" alt="My Info"><figcaption>10 · My Info — Personal Details</figcaption></figure>
+  <figure><img src="screenshots/11-performance.png" alt="Performance"><figcaption>11 · Performance — Reviews</figcaption></figure>
+  <figure><img src="screenshots/12-dashboard.png" alt="Dashboard revisit"><figcaption>12 · Dashboard (revisit)</figcaption></figure>
+  <figure><img src="screenshots/13-directory.png" alt="Directory"><figcaption>13 · Directory</figcaption></figure>
+  <figure><img src="screenshots/14-maintenance.png" alt="Maintenance gate"><figcaption>14 · Maintenance — Administrator Access</figcaption></figure>
+  <figure><img src="screenshots/15-claim.png" alt="Claim"><figcaption>15 · Claim — Assign Claim</figcaption></figure>
+  <figure><img src="screenshots/16-buzz.png" alt="Buzz"><figcaption>16 · Buzz — Feed</figcaption></figure>
+  <figure><img src="screenshots/17-user-menu.png" alt="User dropdown"><figcaption>17 · User dropdown</figcaption></figure>
+  <figure><img src="screenshots/18-after-logout.png" alt="After logout"><figcaption>18 · Login page after logout</figcaption></figure>
+  <figure><img src="screenshots/19-protected-route-redirect.png" alt="Protected route redirect"><figcaption>19 · Deep link redirected to login</figcaption></figure>
+  <figure><img src="screenshots/20-forgot-password.png" alt="Forgot password"><figcaption>20 · Password reset request</figcaption></figure>
+</div>
+
+</main>
+</body>
+</html>

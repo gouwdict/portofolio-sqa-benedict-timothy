@@ -1,0 +1,34 @@
+[
+  {
+    "type": "console.error",
+    "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "location": {
+      "url": "https://events.backtrace.io/api/unique-events/submit?universe=UNIVERSE&token=TOKEN",
+      "line": 0,
+      "column": 0,
+      "lineNumber": 0,
+      "columnNumber": 0
+    }
+  },
+  {
+    "type": "requestfailed",
+    "url": "https://events.backtrace.io/api/summed-events/submit?universe=UNIVERSE&token=TOKEN",
+    "error": "Load request cancelled"
+  },
+  {
+    "type": "requestfailed",
+    "url": "https://submit.backtrace.io/UNIVERSE/TOKEN/json",
+    "error": "Load request cancelled"
+  },
+  {
+    "type": "console.error",
+    "text": "Failed to load resource: the server responded with a status of 404 ()",
+    "location": {
+      "url": "https://www.saucedemo.com/inventory.html",
+      "line": 0,
+      "column": 0,
+      "lineNumber": 0,
+      "columnNumber": 0
+    }
+  }
+]

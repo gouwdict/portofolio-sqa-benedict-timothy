@@ -1,0 +1,50 @@
+[
+  {
+    "flow": "Login page load",
+    "status": "PASS"
+  },
+  {
+    "flow": "Negative login (locked-out user)",
+    "status": "PASS"
+  },
+  {
+    "flow": "Valid login",
+    "status": "PASS"
+  },
+  {
+    "flow": "Inventory / dashboard",
+    "status": "PASS"
+  },
+  {
+    "flow": "Sort price low to high",
+    "status": "PASS"
+  },
+  {
+    "flow": "Add items to cart",
+    "status": "PASS"
+  },
+  {
+    "flow": "Cart page contents",
+    "status": "PASS"
+  },
+  {
+    "flow": "Checkout empty validation",
+    "status": "PASS"
+  },
+  {
+    "flow": "Checkout totals",
+    "status": "PASS"
+  },
+  {
+    "flow": "Order completion",
+    "status": "PASS"
+  },
+  {
+    "flow": "Logout",
+    "status": "PASS"
+  },
+  {
+    "flow": "Protected route redirect after logout",
+    "status": "PASS"
+  }
+]

@@ -1,0 +1,46 @@
+# ============================================================================
+# .gitignore — Portofolio Software Quality Assurance (Benedict Timothy)
+# File ini memberi tahu Git daftar folder/file yang TIDAK BOLEH di-upload ke
+# GitHub (seperti paket library pihak ketiga, file sementara, dan kredensial).
+# ============================================================================
+
+# 1. Library & Dependencies Node.js (Playwright)
+# Folder node_modules berukuran besar (~60 MB+) dan berisi ribuan file library.
+# Siapa pun yang mengunduh repo ini cukup menjalankan `npm install` untuk
+# mengunduh ulang node_modules berdasarkan daftar di package.json.
+**/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 2. File Sementara Microsoft Office (Excel & Word Lock Files)
+# Saat file .xlsx atau .docx sedang dibuka, Office membuat file sementara `~$...`
+~$*.xlsx
+~$*.docx
+~$*.pptx
+
+# 3. File Rahasia / Environment Variables (Kredensial & Password)
+# Jangan pernah meng-upload file .env yang berisi password/token asli ke GitHub!
+.env
+.env.*
+!.env.example
+
+# 4. File Sampah Sistem Operasi (Windows & macOS)
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# 5. Archive Sementara
+*.rar
+*.7z
+
+# CATATAN PENTING UNTUK PORTOFOLIO QA:
+# Secara normal di proyek software, folder hasil test otomatis (`playwright-report/`
+# dan `test-results/`) sering di-ignore. NAMUN khusus untuk repositori Portofolio QA,
+# kita TETAP MENYIMPAN (`!`) bukti screenshot, laporan HTML, dan hasil eksekusi
+# agar Recruiter & Senior QA bisa langsung melihat bukti pengujian tanpa harus
+# menjalankan kode di komputer mereka.
+!**/Evidence/**
+!**/screenshots/**
+!**/07_Screenshots/**
+!**/playwright-report/**

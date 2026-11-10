@@ -1,0 +1,11 @@
+[
+  "08_UniFi Desktop: Failed to load resource: the server responded with a status of 401 ()",
+  "08_UniFi Desktop: WebSocket connection to 'wss://unifi.ipekabsd.my.id/api/ws/webrtc/local' failed: HTTP Authentication failed; no valid credentials available",
+  "08_UniFi Desktop: Failed to load resource: the server responded with a status of 401 ()",
+  "08_UniFi Desktop: WebSocket connection to 'wss://unifi.ipekabsd.my.id/api/ws/webrtc/local' failed: HTTP Authentication failed; no valid credentials available",
+  "08_UniFi Mobile: Failed to load resource: the server responded with a status of 401 ()",
+  "08_UniFi Mobile: WebSocket connection to 'wss://unifi.ipekabsd.my.id/api/ws/webrtc/local' failed: HTTP Authentication failed; no valid credentials available",
+  "08_UniFi Mobile: Failed to load resource: the server responded with a status of 401 ()",
+  "08_UniFi Mobile: WebSocket connection to 'wss://unifi.ipekabsd.my.id/api/ws/webrtc/local' failed: HTTP Authentication failed; no valid credentials available",
+  "10_Desk Desktop: Failed to load resource: the server responded with a status of 404 ()"
+]

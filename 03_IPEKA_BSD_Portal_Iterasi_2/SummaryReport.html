@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Summary Report - IPEKA BSD Internal Portal</title>
+<style>
+body { font-family: Arial, sans-serif; margin: 24px; color: #222; }
+h1 { color: #1F4E79; }
+h2 { color: #2E74B5; border-bottom: 1px solid #ccc; padding-bottom: 4px; }
+table { border-collapse: collapse; width: 100%; margin: 12px 0; }
+th, td { border: 1px solid #999; padding: 6px; font-size: 12px; }
+th { background: #1F4E79; color: #fff; }
+img { max-width: 280px; margin: 6px; border: 1px solid #ccc; }
+.badge { padding: 2px 6px; border-radius: 4px; color: #fff; font-size: 11px; }
+.pass { background: #2e7d32; }
+.block { background: #c62828; }
+</style>
+</head>
+<body>
+<h1>Summary Report — Portal Aplikasi Internal IPEKA BSD (Iteration 2)</h1>
+<p><strong>Tanggal:</strong> 09 Nov 2026 (Audited: 10 Nov 2026)<br>
+<strong>Target SUT:</strong> https://app.ipekabsd.my.id + 10 Subdomain Layanan<br>
+<strong>QA Engineer:</strong> Benedict Timothy<br>
+<strong>Methodology:</strong> Manual QA with AI-Assisted Execution &amp; Playwright Cross-Browser Verification (Human-in-the-Loop)<br>
+<strong>QA Artifacts:</strong> PRD.md, TestPlan.md (TP-IPEKA-R2-V1.0), TestCases.md/xlsx, TraceabilityMatrix.md/xlsx (15-Column MySkill RTM), EnvironmentConfig.md, Automation/*, Evidence/*, Mobile_Testing/*</p>
+
+<h2>1. Ringkasan Eksekusi</h2>
+<table>
+<tr><th>Metric</th><th>Value</th></tr>
+<tr><td>Total Web Test Cases</td><td>116</td></tr>
+<tr><td>Passed (Manual + AI-Assisted Verification)</td><td>79 (68,1%)</td></tr>
+<tr><td>Blocked (Requires School Admin Creds / Prod Write Guard)</td><td>37 (31,9%)</td></tr>
+<tr><td>Bug Reports Logged</td><td>6 (BUG-001 s.d. BUG-006)</td></tr>
+<tr><td>Requirements Traced (Bidirectional RTM)</td><td>49 (100% Mapped to Test Cases)</td></tr>
+<tr><td>Cross-Browser Smoke (Playwright Automation)</td><td>42/42 Passed (Chromium, Firefox, WebKit)</td></tr>
+<tr><td>Mobile Test Pack (Android 14 / Pixel 7)</td><td>20 Test Cases Prepared (MOB-001 s.d. MOB-020 — Ready for Live Execution)</td></tr>
+</table>
+
+<h2>2. Hasil Cross-Browser Smoke (Playwright)</h2>
+<table>
+<tr><th>Browser Engine</th><th>Smoke Result</th><th>Execution Mode</th><th>Evidence Folder</th></tr>
+<tr><td>Chromium</td><td>14/14 Passed</td><td>Automated (Playwright)</td><td>Evidence/Chromium (13 screenshots)</td></tr>
+<tr><td>Firefox</td><td>14/14 Passed</td><td>Automated (Playwright)</td><td>Evidence/Firefox (13 screenshots)</td></tr>
+<tr><td>WebKit</td><td>14/14 Passed</td><td>Automated (Playwright)</td><td>Evidence/WebKit (13 screenshots)</td></tr>
+</table>
+<p>Smoke suite mencakup portal homepage + keterjangkauan 10 subdomain layanan. Seluruh mesin peramban lulus 100%.</p>
+
+<h2>3. Daftar Bug (6 Temuan)</h2>
+<table>
+<tr><th>Bug ID</th><th>Title</th><th>Module</th><th>Severity</th><th>Priority</th><th>Status</th></tr>
+<tr><td>BUG-001</td><td>School Tour booking disabled ('not open for booking yet')</td><td>Visit &amp; School Tour</td><td>Medium</td><td>Medium</td><td>Open</td></tr>
+<tr><td>BUG-002</td><td>HelpDesk public page shows event timeline only, no ticket form</td><td>IT Events &amp; Tasks</td><td>Medium</td><td>High</td><td>Open</td></tr>
+<tr><td>BUG-003</td><td>Admin PIN login has no visible lockout/rate limit</td><td>Authentication/Security</td><td>High</td><td>High</td><td>Open</td></tr>
+<tr><td>BUG-004</td><td>Internet traffic monitoring uses legacy PRTG freeware (2008)</td><td>Internet Traffic</td><td>Low</td><td>Low</td><td>Open</td></tr>
+<tr><td>BUG-005</td><td>Fragmented authentication across services (Google SSO vs PIN)</td><td>Authentication/Security</td><td>Low</td><td>Medium</td><td>Open</td></tr>
+<tr><td>BUG-006</td><td>Weather placeholder dashes shown before station data arrives</td><td>Weather (Eco)</td><td>Low</td><td>Low</td><td>Open</td></tr>
+</table>
+
+<h2>4. Blocked Test Cases (37 Kasus)</h2>
+<p>Sebanyak 37 kasus berstatus <strong>Blocked</strong> secara transparan karena membutuhkan kredensial Google Workspace sekolah (<code>@bsd.ipeka.sch.id</code>), PIN Admin 6 digit, atau penahanan transaksi <em>write</em> agar tidak mengotori database operasional sekolah. Rincian lengkap tersedia di <code>TestCases.xlsx</code> dan <code>TraceabilityMatrix.xlsx</code>.</p>
+
+<h2>5. Evidence (Portal per Browser)</h2>
+<div>
+  <img src="Evidence/Chromium/01_portal_home.png" alt="Chromium">
+  <img src="Evidence/Firefox/01_portal_home.png" alt="Firefox">
+  <img src="Evidence/WebKit/01_portal_home.png" alt="WebKit">
+</div>
+<p>Screenshot layanan lengkap tersedia di folder <code>Evidence/&lt;Browser&gt;/</code>.</p>
+
+<h2>6. Rekomendasi QA</h2>
+<ul>
+  <li>Sentralisasi autentikasi menggunakan Google Workspace SSO untuk seluruh layanan internal.</li>
+  <li>Aktifkan fitur School Tour booking atau sesuaikan deskripsi kartu pada Portal utama (<code>BUG-001</code>).</li>
+  <li>Terapkan <em>rate limiting / account lockout</em> pada gerbang PIN admin 6 digit (<code>BUG-003</code>).</li>
+  <li>Remajakan PRTG Traffic Grapher V6 (2008) dan perbaiki responsivitas tabel pada layar mobile.</li>
+</ul>
+
+<p style="margin-top:24px;font-size:11px;color:#666;">Prepared by Benedict Timothy — Manual QA with AI-Assisted Tooling. Folder: D:\Test Project\Portofolio QA Manual\03_IPEKA_BSD_Portal_Iterasi_2</p>
+</body>
+</html>

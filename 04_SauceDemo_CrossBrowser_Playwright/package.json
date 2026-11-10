@@ -1,0 +1,11 @@
+{
+  "name": "cross-browser-saucedemo-evidence",
+  "private": true,
+  "scripts": {
+    "test": "playwright test",
+    "report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.65.0"
+  }
+}
